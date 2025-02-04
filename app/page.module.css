@@ -1,0 +1,216 @@
+.app {
+  color: #353C4E;
+  background: #F0F2F4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.header {
+  background: white;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header > div > img {
+  height: 1.75rem;
+}
+
+.header > div > span {
+  vertical-align: super;
+  padding-left: 0.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 2rem;
+}
+
+.content > img {
+  height: 45vh;
+}
+
+.content > p {
+  font-size: 2rem;
+}
+
+.tableContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.heading {
+  color: #F1692F;
+  font-size: 1.875rem;     
+  line-height: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.25px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #F1692F;
+  color: white;
+}
+
+.footerButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tableFooter {
+  padding: 1rem;
+}
+
+.paginationButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.paginationButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.paginationButton:active {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.chatButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatWindow {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeader {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chatBody {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.chatMessage {
+  margin-bottom: 10px;
+}
+
+.chatMessage.bot {
+  text-align: left;
+  color: #555;
+}
+
+.chatMessage.user {
+  text-align: right;
+  color: #007bff;
+}
+
+.chatFooter {
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  border-top: 1px solid #ddd;
+}
+
+.chatFooter input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+  color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.secondaryButton:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.productLink {
+  color: rgba(0, 0, 0, 0.85);
+  text-decoration: none;
+}
+
+.productLink:hover {
+  text-decoration: underline;
+}
