@@ -2,7 +2,14 @@
 
 Welcome to the Boosted Technology Technical Screener frontend interview. We're going to perform a quick live-coding react style interview focusing on getting data from an API.
 
-First, run the development server:
+First, install the packages
+```bash
+npm i
+# or
+yarn
+```
+
+Next, run the development server:
 
 ```bash
 npm run dev
