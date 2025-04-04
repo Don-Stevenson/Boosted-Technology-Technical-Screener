@@ -25,6 +25,8 @@ The project involves building a product catalog with pagination and product deta
 
 ## Tasks
 
+Types for the endpoint can be found in the `./types` directory. Use appropriate types.
+
 ### 1. Data Fetching Implementation
 - Implement data fetching from the provided API endpoint [https://dummyjson.com/products](https://dummyjson.com/products)
 - Handle loading and error states
@@ -32,7 +34,7 @@ The project involves building a product catalog with pagination and product deta
 ### 2. Pagination Implementation
 - Add Next and Previous navigation buttons
 - Implement pagination logic with `limit` and `skip` parameters
-[https://dummyjson.com/products?limit=10&skip=10](https://dummyjson.com/products?limit=10&skip=10)
+[https://dummyjson.com/products?limit=10&skip=10](https://dummyjson.com/products?limit=10&skip=0)
 
 ### 3. Product Details Page
 - Implement data fetching for individual product information [https://dummyjson.com/products/1](https://dummyjson.com/products/1)

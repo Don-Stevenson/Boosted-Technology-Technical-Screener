@@ -31,6 +31,7 @@ export default function Home() {
       </div>
       <div className={styles.content}>
       <div className={styles.tableContainer}>
+
         <table className={styles.table}>
           <thead>
             <tr>
