@@ -7,12 +7,13 @@ import { useChat } from '@/hooks/useChat'
 import Link from 'next/link'
 import { Product } from '@/types/products'
 import { LoadingMessage } from './components/LoadingMessage'
+import ErrorMessage from './components/ErrorMessage'
 
 export default function Home() {
   const { isOpen, messages, toggleChat, sendMessage } = useChat()
   const [input, setInput] = useState('')
   const [products, setProducts] = useState<Product[]>([])
-  const [error, setError] = useState('')
+  const [isError, setIsError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [pageIndex, setPageIndex] = useState(0)
   const [pageTotal, setPageTotal] = useState(0)
@@ -27,8 +28,8 @@ export default function Home() {
       setPageTotal(fetchProductsListJson.total)
       if (fetchProductList.ok) setIsLoading(false)
     } catch (error) {
-      console.error('error in fetchin products', error)
-      setError('Error: there has been an error loading the product page.')
+      console.error('error in fetching products', error)
+      setIsError(true)
     }
   }
 
@@ -64,6 +65,7 @@ export default function Home() {
             </thead>
             <tbody>
               <LoadingMessage isLoading={isLoading} />
+              <ErrorMessage isError={isError} />
               {products.map((product, index) => (
                 <tr key={index}>
                   <td>
