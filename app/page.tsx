@@ -26,6 +26,8 @@ export default function Home() {
 
       setProducts(fetchProductsListJson.products)
       setPageTotal(fetchProductsListJson.total)
+      setPageIndex(pageTotal / 10)
+
       if (fetchProductList.ok) setIsLoading(false)
     } catch (error) {
       console.error('error in fetching products', error)
@@ -35,7 +37,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchProducts()
-  }, [])
+  })
 
   const handlePrevious = () => {
     //TODO implement
@@ -85,6 +87,7 @@ export default function Home() {
             <tfoot>
               <tr>
                 <td colSpan={4} className={styles.tableFooter}>
+                  <div className={styles.footerButtons}>{pageIndex}</div>
                   <div className={styles.footerButtons}>
                     <button
                       className={styles.paginationButton}
