@@ -45,6 +45,7 @@ export default function Home() {
 
   const handleNext = () => {
     const skipTen = 10
+    console.log({ skipTen })
   }
 
   return (
