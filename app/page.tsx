@@ -40,12 +40,13 @@ export default function Home() {
   })
 
   const handlePrevious = () => {
-    //TODO implement
+    const skipTen = 10
+    setPageIndex(() => pageIndex - skipTen)
   }
 
   const handleNext = () => {
     const skipTen = 10
-    console.log({ skipTen })
+    setPageIndex(() => pageIndex + skipTen)
   }
 
   return (
@@ -88,83 +89,83 @@ export default function Home() {
             <tfoot>
               <tr>
                 <td colSpan={4} className={styles.tableFooter}>
-                  <div className={styles.footerButtons}>{pageIndex}</div>
-                  <div className={styles.footerButtons}>
-                    <button
-                      className={styles.paginationButton}
-                      onClick={handlePrevious}
-                    >
-                      &lt; Previous
-                    </button>
-                    <button
-                      className={styles.paginationButton}
-                      onClick={handleNext}
-                    >
-                      Next &gt;
-                    </button>
-                  </div>
+                  <button
+                    className={styles.paginationButton}
+                    onClick={handlePrevious}
+                  >
+                    &lt; Previous
+                  </button>
+                  <button
+                    className={styles.paginationButton}
+                    onClick={handleNext}
+                  >
+                    Next &gt;
+                  </button>
                 </td>
               </tr>
             </tfoot>
           </table>
         </div>
+      </div>
+      <div>
+        page: {pageIndex.toFixed(0)} / {pageTotal}
+      </div>
 
-        <button
-          className={styles.chatButton}
-          data-testid="chat-button"
-          onClick={toggleChat}
-        >
-          Chat
-        </button>
+      <button
+        className={styles.chatButton}
+        data-testid="chat-button"
+        onClick={toggleChat}
+      >
+        Chat
+      </button>
 
-        {isOpen && (
-          <div className={styles.chatWindow}>
-            <div className={styles.chatHeader}>
-              <span>Chat Assistant</span>
-              <button className={styles.closeButton} onClick={toggleChat}>
-                ✖
-              </button>
-            </div>
-            <div className={styles.chatBody}>
-              {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={clsx(
-                    styles.chatMessage,
-                    message.sender === 'bot' ? 'bot' : 'user'
-                  )}
-                >
-                  {message.text}
-                </div>
-              ))}
-            </div>
-            <div className={styles.chatFooter}>
-              <input
-                type="text"
-                value={input}
-                onChange={e => setInput(e.target.value)}
-                placeholder="Type a message..."
-                onKeyDown={e => {
-                  if (e.key === 'Enter') {
-                    sendMessage(input)
-                    setInput('')
-                  }
-                }}
-              />
-              <button
-                className={styles.secondaryButton}
-                data-testid="message-button"
-                onClick={() => {
+      {isOpen && (
+        <div className={styles.chatWindow}>
+          <div className={styles.chatHeader}>
+            <span>Chat Assistant</span>
+            <button className={styles.closeButton} onClick={toggleChat}>
+              ✖
+            </button>
+          </div>
+          <div className={styles.chatBody}>
+            {messages.map((message, index) => (
+              <div
+                key={index}
+                className={clsx(
+                  styles.chatMessage,
+                  message.sender === 'bot' ? 'bot' : 'user'
+                )}
+              >
+                {message.text}
+              </div>
+            ))}
+          </div>
+          <div className={styles.chatFooter}>
+            <input
+              type="text"
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              placeholder="Type a message..."
+              onKeyDown={e => {
+                if (e.key === 'Enter') {
                   sendMessage(input)
                   setInput('')
-                }}
-              >
-                Send
-              </button>
-            </div>
+                }
+              }}
+            />
+            <button
+              className={styles.secondaryButton}
+              data-testid="message-button"
+              onClick={() => {
+                sendMessage(input)
+                setInput('')
+              }}
+            >
+              Send
+            </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }
